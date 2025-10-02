@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atividade DOM — SeuNome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="site-header" class="container header">
+    <h1 id="main-title">Aula 1 — Estrutura inicial e o DOM</h1>
+    <p class="subtitle">Exercício prático: identificar elementos com id e class</p>
+    <nav id="main-nav" class="nav">
+      <ul>
+        <li><a href="#introducao" class="nav-link">Introdução</a></li>
+        <li><a href="#exemplo" class="nav-link">Exemplo</a></li>
+        <li><a href="#atividades" class="nav-link">Atividades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content" class="container">
+    <section id="introducao" class="card">
+      <h2>Introdução</h2>
+      <p>Este arquivo HTML foi criado como base para praticar inspeção do DOM e manipulação via DevTools.</p>
+    </section>
+
+    <section id="exemplo" class="card">
+      <h2>Exemplo de elementos</h2>
+      <article id="article-1" class="article">
+        <h3 class="article-title">Artigo de exemplo</h3>
+        <p class="lead">Texto de exemplo com <span class="highlight">uma palavra em destaque</span> e um <a id="ex-link" href="#">link de exemplo</a>.</p>
+        <button id="btn-toggle" class="btn">Mostrar / Esconder texto</button>
+        <div id="hidden-text" class="hidden">Aqui está um texto que pode ser escondido ou mostrado com JS (prática de DOM).</div>
+      </article>
+
+      <aside id="aside-ex" class="aside">
+        <h4>Resumo rápido</h4>
+        <ul>
+          <li data-note="1">Elemento com <code>id</code> — único.</li>
+          <li data-note="2">Classe (<code>class</code>) — pode repetir.</li>
+          <li data-note="3">Use DevTools para inspecionar e alterar.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="atividades" class="card">
+      <h2>Atividades</h2>
+      <ol>
+        <li>Abra o DevTools e localize o elemento com id <code>main-title</code>.</li>
+        <li>Altere o texto de <code>#hidden-text</code> através do console.</li>
+        <li>Adicione a classe <code>active</code> ao <code>nav</code> e veja o estilo mudar.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="container footer">
+    <p>Feito para a prática — Aula 1. &copy; 2025</p>
+  </footer>
+
+  <!-- Pequeno script inline apenas para demonstrar interação (opcional) -->
+  <script>
+    document.getElementById('btn-toggle').addEventListener('click', function () {
+      const t = document.getElementById('hidden-text');
+      t.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
